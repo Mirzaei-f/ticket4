@@ -29,6 +29,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 
 import Mahsa from "../../assets/images/logomahsa2.jpg"
+
 const validation = yup.object().shape({
     phone: yup.string().required('لطفا شماره موبایل خود را وارد کنید '),
 })
@@ -56,7 +57,13 @@ useEffect(() => {
     
 
     return (
-<View style={[s`flex-1 `,{backgroundColor:"#5221BD"}]}>
+<View style={[s`flex-1 `,
+    {
+        //backgroundColor:"#5221BD"
+        backgroundColor:"#b3d4dd"
+       // backgroundColor:"#d4dfdb"
+
+    }]}>
 
     <SafeAreaView  style={s`flex`}>
 
@@ -129,15 +136,16 @@ style={[styles.p,s`flex-1 bg-white px-8 pt-8  `]}>
                             onChangeText={handleChange('phone')}
                             onBlur={handleBlur('phone')}
                             placeholder="09"
-                            placeholderTextColor="#3f3f46"
+                           // placeholderTextColor="#3f3f46"
+                           placeholderTextColor="#D570D9"
                             // style={{fontSize:RFValue(24),
                             //    // marginBottom:"15%",
                             //     backgroundColor:'#d5d5d5',
                             //     width:(Dimensions.get("window").width/100)*80,borderRadius:10,color:"#000",textAlign:"center"}}
                             
-    style={s`  bg-gray-300 text-gray-700 rounded-2xl 
+    style={[s`  text-gray-700 rounded-2xl 
     w-full text-center
-                            `}
+                            `,{borderWidth:1,borderColor:"#D570D9"}]}
                             />
                 
  {/* {(errors.phone) && <Text  
@@ -152,8 +160,8 @@ style={[styles.p,s`flex-1 bg-white px-8 pt-8  `]}>
 
                <TouchableOpacity  
                onPress={handleSubmit}
-               style={s`py-3 bg-yellow-400 rounded-2xl `}>
-                <Text style={s`  font-bold text-center text-gray-700 text-xl`}>
+               style={[s`py-3  rounded-2xl `,{backgroundColor:"#B828B9"}]}>
+                <Text style={[s`  font-bold text-center  text-xl`,{color:"#fff"}]}>
                     ادامه</Text>
                </TouchableOpacity>
  </>}
@@ -291,5 +299,4 @@ const styles=StyleSheet.create({
   })
 
 export {Login}
-
 

@@ -50,13 +50,15 @@ const get = async (key) => {
 
   return(
 
-<View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#5221BD'}}>
+<View style={{flex:1,justifyContent:'center',alignItems:'center',
+  //backgroundColor:'#5221BD'}}>
+  backgroundColor:'#b3d4dd'}}>
 
 {/* <Image source={logomain} style={{width:"80%",height:"50%" ,marginLeft:5,}}/> */}
 <Image style={s` w-52 h-52  mt-6 mb-6 rounded-full `} source={logomain}/>
           {
               netinfo.isConnected ?
-                  <ActivityIndicator color={'black'} size={'large'} /> :
+                  <ActivityIndicator color={'#fff'} size={'large'} /> :
                   <Text style={{ fontSize: RFValue(15), color: '#fff' }}>اتصال به اینترنت خود را بررسی کنید</Text>
           }
 

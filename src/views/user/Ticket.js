@@ -25,6 +25,7 @@ import { usefetchuser } from '../../components/usefetchuser';
 import { ActivityIndicator } from 'react-native-paper';
 import { JDate, JTime } from '../../components/JDate';
 import logomain from "../../assets/images/t1.jpg";
+import chatpic from "../../assets/images/chatpic.jpg";
 import { baseUrl, imageUrl } from "../../components/Addresses";
 import FastImage from 'react-native-fast-image' //for show gif
 //import Video from "react-native-video"
@@ -699,7 +700,9 @@ const ismymessage = (sender) => {
         >
             <Image
 
-                source={logomain}
+                //source={logomain}
+                source={chatpic}
+              
                 style={StyleSheet.absoluteFillObject}
             //blurRadius={40}
 
@@ -755,7 +758,7 @@ const ismymessage = (sender) => {
                             onPress={uploadVideo}
                             style={Styles.modalSec}
                                >
-                            <Entypo name='video' style={Styles.modalIcons} />
+                            <Entypo name='video' style={[Styles.modalIcons,{ color: "#B828B9"}]} />
                             <Text style={Styles.modalTexts}>فیلم</Text>
                          </TouchableOpacity>
 
@@ -764,7 +767,7 @@ const ismymessage = (sender) => {
                         <TouchableOpacity
                             onPress={uploadAudio}
                             style={Styles.modalSec}>
-                            <AntDesign name='sound' style={Styles.modalIcons} />
+                            <AntDesign name='sound' style={[Styles.modalIcons,{ color: "#B828B9"}]} />
                             <Text style={Styles.modalTexts}>صدا</Text>
                         </TouchableOpacity>
                     </View>
@@ -774,7 +777,7 @@ const ismymessage = (sender) => {
                         <TouchableOpacity
                             onPress={uploadImage}
                             style={Styles.modalSec}>
-                            <Entypo name='images' style={Styles.modalIcons} />
+                            <Entypo name='images'   style={[Styles.modalIcons,{ color: "#B828B9"}]} />
                             <Text style={Styles.modalTexts}>تصویر</Text>
                         </TouchableOpacity>
 
@@ -782,7 +785,7 @@ const ismymessage = (sender) => {
                         <TouchableOpacity
                             onPress={uploadDocument}
                             style={Styles.modalSec}>
-                            <Ionicons name='document-attach-outline' style={Styles.modalIcons} />
+                            <Ionicons name='document-attach-outline' style={[Styles.modalIcons,{ color: "#B828B9"}]} />
                             <Text style={Styles.modalTexts}>سند</Text>
                         </TouchableOpacity>
                     </View>
@@ -1084,12 +1087,14 @@ const Styles = StyleSheet.create({
 
     modalIcons: {
         fontSize: RFValue(25),
-        color: "gray"
+         color: "gray"
+    
     },
     modalTexts: {
         fontSize: RFValue(12),
         //   color: Gray,
-        color: "gray"
+       color: "gray"
+     
         //fontFamily: "BYekan"
     },
     /////

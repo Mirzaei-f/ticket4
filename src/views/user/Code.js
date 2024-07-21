@@ -97,7 +97,10 @@ const Exit=()=>{
 
     return (
 
-<View style={[s`flex-1 `,{backgroundColor:"#5221BD",}]}>
+<View style={[s`flex-1 `,{
+   // backgroundColor:"#5221BD",
+         backgroundColor:"#b3d4dd"
+    }]}>
 
 <SafeAreaView  style={[s`flex`,{height:Dimensions.get("window").width>576?"47%":"45%"}]}>
 
@@ -191,15 +194,16 @@ style={{width:"100%",flexDirection:'column',justifyContent:'center',
                         onChangeText={handleChange('code')}
                         onBlur={handleBlur('code')}
                         //placeholder="09"
-                        placeholderTextColor="#3f3f46"
+                       // placeholderTextColor="#3f3f46"
+                         placeholderTextColor="#D570D9"
                         // style={{fontSize:RFValue(24),
                         //    // marginBottom:"15%",
                         //     backgroundColor:'#d5d5d5',
                         //     width:(Dimensions.get("window").width/100)*80,borderRadius:10,color:"#000",textAlign:"center"}}
                         
-style={s`  bg-gray-300 text-gray-700 rounded-2xl 
+style={[s`  bg-white text-gray-700 rounded-2xl 
 w-full text-center 
-                        `}
+                       `,{borderWidth:1,borderColor:"#D570D9"} ]}
                         />
 {/*             
 {(errors.code) && <Text  
@@ -214,21 +218,22 @@ w-full text-center
 
            <TouchableOpacity  
            onPress={handleSubmit}
-           style={[s` bg-yellow-400 rounded-2xl `,
+           style={[s`  rounded-2xl `,
            {
+            backgroundColor:"#B828B9",
             paddingVertical:Dimensions.get("window").width>576? "1%":"5%",
            marginBottom:Dimensions.get("window").width>576? "10%":"5%",
            marginTop:Dimensions.get("window").width>576? "2%":"5%"
            }]}>
             <Text 
             
-            style={s`  font-bold text-center text-gray-700 text-xl`}>
+            style={s`  font-bold text-center text-white text-xl`}>
                 ادامه</Text>
            </TouchableOpacity>
 
            {   state.number > 0 ? <>
 
-                                <Text style={[styles.timer,{display: state.number > 1 ?  null : 'none'}]}> {state.number}</Text>
+                                <Text style={[styles.timer,{display: state.number > 1 ?  null : 'none',color:"#D570D9"}]}> {state.number}</Text>
                             </> :<>
 
                                    <TouchableOpacity onPress={()=>{

@@ -217,7 +217,7 @@ style={styles.fontSize}>{subtitle2}
        {/* { expanded?<Icon name="keyboard-arrow-up" size={24} color="#000"/>:<Icon name="keyboard-arrow-down" size={24} color="#000"/>} */}
    
        <Animated.View  style={{transform:[{rotateZ:arrowTransform}]}}>
-         <Icon name="keyboard-arrow-down" size={24} color="#000"/>
+         <Icon name="keyboard-arrow-down" size={24} color="#B828B9"/>
          </Animated.View>
    
     </TouchableOpacity>
@@ -252,7 +252,7 @@ null
        {/* { expanded1?<Icon name="keyboard-arrow-up" size={24} color="#000"/>:<Icon name="keyboard-arrow-down" size={24} color="#000"/>} */}
     
        <Animated.View  style={{transform:[{rotateZ:arrowTransform1}]}}>
-         <Icon name="keyboard-arrow-down" size={24} color="#000"/>
+         <Icon name="keyboard-arrow-down" size={24} color="#B828B9"/>
          </Animated.View>
     </TouchableOpacity>
 
@@ -289,7 +289,7 @@ null
    
    
        <Animated.View  style={{transform:[{rotateZ:arrowTransform2}]}}>
-         <Icon name="keyboard-arrow-down" size={24} color="#000"/>
+         <Icon name="keyboard-arrow-down" size={24} color="#B828B9"/>
          </Animated.View>
    
     </TouchableOpacity>
@@ -415,7 +415,7 @@ AsyncStorage.removeItem('auth').then(() => {
 
 }}>
     <Text style={styles.texoption}>خروج از حساب</Text>
-    <Icon name={'exit-to-app'} size={RFValue(24)} color={"#000"} style={{margin:'6%',alignSelf:'flex-end'}}/>
+    <Icon name={'exit-to-app'} size={RFValue(26)} color={"#B828B9"} style={{margin:'6%',alignSelf:'flex-end'}}/>
 </TouchableOpacity>
 
 
@@ -459,7 +459,8 @@ alignItems:'center',
 alignSelf:'flex-end'
 }
 ,texoption:{
-    fontSize:RFValue(15)
+    fontSize:RFValue(15),
+    color:"#000"
 },
 line: {
     width: '100%',
@@ -470,8 +471,8 @@ line: {
 },
 touchText:{
  //fontWeight:"bold",
- fontSize:RFValue(15)
-   // color:"#000"
+ fontSize:RFValue(16),
+    color:"#000"
 },
 touchable:{
     flexDirection:"row-reverse",
@@ -481,11 +482,13 @@ touchable:{
     paddingVertical:20,
 },
 fontSize:{
-    fontSize:RFValue(14)
+    fontSize:RFValue(14),
+    color:"#000",
 },
 
 fontSize1:{
     fontSize:RFValue(14),
+    color:"#000",
     marginBottom:25
 },
 })

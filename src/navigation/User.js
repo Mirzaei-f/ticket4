@@ -11,6 +11,7 @@ import { Test } from "../views/user/Test";
 import {TicketList } from "../views/user/TicketList";
 import {Ticket}  from "../views/user/Ticket"
 import { UploadFiles } from "../components/UploadFiles";
+import { Search } from "../components/Search";
 const Drawer=createDrawerNavigator()
 
 const Stack=createNativeStackNavigator()
@@ -37,6 +38,7 @@ const User=()=>{
             <Drawer.Screen     options={{ unmountOnBlur: true }}    name={'ticketlist'} component={TicketList}/>
           
             <Stack.Screen     options={{ unmountOnBlur: true }}   name={'ticket'} component={Ticket}/>
+            <Stack.Screen     options={{ unmountOnBlur: true }}   name={'search'} component={Search}/>
         </Drawer.Navigator>
     )
 }

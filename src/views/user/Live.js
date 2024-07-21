@@ -548,14 +548,14 @@ header:{
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:'green',
+    backgroundColor:"#F2BA08",
     borderRadius:7,
     marginHorizontal:'2%'
 },close:{
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:'blue',
+    backgroundColor:"#B828B9" ,
     borderRadius:7,
     marginHorizontal:'2%'
 },

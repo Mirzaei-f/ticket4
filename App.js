@@ -156,6 +156,187 @@
 
 
 
+// import React, {useContext, useEffect, useState} from "react";
+// import {View, Text} from "react-native";
+// import {NavigationContainer} from "@react-navigation/native";
+// import {createNativeStackNavigator} from "@react-navigation/native-stack";
+// import {User} from "./src/navigation/User";
+// import { Context } from "./src/components/Context";
+// import { Guest } from "./src/navigation/guest";
+// import 'react-native-gesture-handler';
+// ///import 'react-native-reanimated'
+// import 'react-native-gesture-handler'
+// //import najva from "react-native-najva";
+// const Stack = createNativeStackNavigator()
+
+// const App = () => {
+
+
+//     const [phone,setphone]=useState('')
+//     const [auth,setauth]=useState('')
+//     const [reload,setreload]=useState()
+
+
+
+
+
+
+
+
+
+
+// ///////////////////////////////notification///////////////////////////////////////////////////
+
+
+//     // const initializePush = async () => {
+//     //   const apikey = "b295c651-67e2-4368-9890-42ab46f99e61"; // get api key from najva panel
+//     //   const websiteId = 53852; // get website id from najva panel
+    
+//     //   await najva.initialize(apikey, websiteId, false /* location */, false);
+//     //   const najvaToken = await najva.getSubscribedToken();
+//     // };
+
+
+
+
+
+//     // useEffect(() => {
+       
+//     //     initializePush();
+
+//     //   }, []);
+
+
+// ///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+//     const data={
+//         phone:phone,
+//         setphone:(value)=>{setphone(value)},
+//         auth:auth,
+//         setauth:(value)=>{setauth(value)},
+//         reload:reload,
+//         setreload:(value)=>{setreload(value)}
+//     }
+
+
+
+
+
+    
+
+
+
+
+//     return (
+
+//         <Context.Provider value={data}>
+//             <NavigationContainer>
+//                 <Stack.Navigator initialRouteName={'guest'} screenOptions={{headerShown:false}}>
+
+//                     <Stack.Screen name='user' component={User}/>
+
+//                     <Stack.Screen name='guest' component={Guest}/>
+
+
+//                 </Stack.Navigator>
+
+//             </NavigationContainer>
+//         </Context.Provider>
+//     )
+// }
+
+// export default App
+
+
+
+
+
+///////////////////////////////////////////////////////////////
+
+// import React, {useContext, useEffect, useState} from "react";
+// import {View, Text} from "react-native";
+// import {NavigationContainer} from "@react-navigation/native";
+// import {createNativeStackNavigator} from "@react-navigation/native-stack";
+// import {User} from "./src/navigation/User";
+// import { Context } from "./src/components/Context";
+// import { Guest } from "./src/navigation/guest";
+// import 'react-native-gesture-handler';
+// ///import 'react-native-reanimated'
+// import 'react-native-gesture-handler'
+// //import najva from "react-native-najva";
+// const Stack = createNativeStackNavigator()
+
+// const App = () => {
+
+
+//     const [phone,setphone]=useState('')
+//     const [auth,setauth]=useState('')
+//     const [reload,setreload]=useState()
+//     const [provinceid,setprovinceid]=useState('')
+//     const [cityid,setcityid]=useState('')
+//     const [ regeonId,setregeonId]=useState('')
+
+  
+
+//     const data={
+//         phone:phone,
+//         setphone:(value)=>{setphone(value)},
+//         auth:auth,
+//         setauth:(value)=>{setauth(value)},
+//         reload:reload,
+//         setreload:(value)=>{setreload(value)},
+
+//         provinceidcontext:provinceid,
+//         setprovinceidcontext:(value)=>{setprovinceid(value)},
+ 
+
+//         cityidcontext: cityid,
+//         setcityidcontext:(value)=>{setcityid(value)},
+
+
+//         regeonidcontext:regeonId,
+//         setregeonidcontext:(value)=>{setregeonId(value)},
+
+
+        
+
+//     }
+
+
+
+
+
+    
+
+
+
+
+//     return (
+
+//         <Context.Provider value={data}>
+//             <NavigationContainer>
+//                 <Stack.Navigator initialRouteName={'guest'} screenOptions={{headerShown:false}}>
+
+//                         <Stack.Screen name='user' component={User}/> 
+
+//                     <Stack.Screen name='guest' component={Guest}/>
+
+
+//                 </Stack.Navigator>
+
+//             </NavigationContainer>
+//         </Context.Provider>
+//     )
+// }
+
+// export default App
+//////////////////////////////////////////////
+
+
 import React, {useContext, useEffect, useState} from "react";
 import {View, Text} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
@@ -167,89 +348,55 @@ import 'react-native-gesture-handler';
 ///import 'react-native-reanimated'
 import 'react-native-gesture-handler'
 //import najva from "react-native-najva";
-const Stack = createNativeStackNavigator()
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const [phone, setphone] = useState('');
+  const [auth, setauth] = useState('');
+  const [reload, setreload] = useState();
+  const [provinceid, setprovinceid] = useState('');
+  const [cityid, setcityid] = useState('');
+  const [regeonId, setregeonId] = useState('');
 
+  const data = {
+    phone: phone,
+    setphone: (value) => { setphone(value) },
+    auth: auth,
+    setauth: (value) => { setauth(value) },
+    reload: reload,
+    setreload: (value) => { setreload(value) },
+    provinceidcontext: provinceid,
+    setprovinceidcontext: (value) => { setprovinceid(value) },
+    cityidcontext: cityid,
+    setcityidcontext: (value) => { setcityid(value) },
+    regeonidcontext: regeonId,
+    setregeonidcontext: (value) => { setregeonId(value) },
+  };
 
-    const [phone,setphone]=useState('')
-    const [auth,setauth]=useState('')
-    const [reload,setreload]=useState()
+  const queryClient = new QueryClient();
 
-
-
-
-
-
-
-
-
-
-///////////////////////////////notification///////////////////////////////////////////////////
-
-
-    // const initializePush = async () => {
-    //   const apikey = "b295c651-67e2-4368-9890-42ab46f99e61"; // get api key from najva panel
-    //   const websiteId = 53852; // get website id from najva panel
-    
-    //   await najva.initialize(apikey, websiteId, false /* location */, false);
-    //   const najvaToken = await najva.getSubscribedToken();
-    // };
-
-
-
-
-
-    // useEffect(() => {
-       
-    //     initializePush();
-
-    //   }, []);
-
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-    const data={
-        phone:phone,
-        setphone:(value)=>{setphone(value)},
-        auth:auth,
-        setauth:(value)=>{setauth(value)},
-        reload:reload,
-        setreload:(value)=>{setreload(value)}
-    }
-
-
-
-
-
-    
-
-
-
-
-    return (
-
-        <Context.Provider value={data}>
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName={'guest'} screenOptions={{headerShown:false}}>
-
-                    <Stack.Screen name='user' component={User}/>
-
-                    <Stack.Screen name='guest' component={Guest}/>
-
-
-                </Stack.Navigator>
-
-            </NavigationContainer>
-        </Context.Provider>
-    )
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Context.Provider value={data}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName={'guest'} screenOptions={{ headerShown: false }}>
+            <Stack.Screen name='user' component={User} />
+            <Stack.Screen name='guest' component={Guest} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Context.Provider>
+    </QueryClientProvider>
+  );
 }
 
-export default App
+export default App;
+
+
+
+
 
 
 

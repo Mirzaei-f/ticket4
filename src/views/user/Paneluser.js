@@ -23,7 +23,7 @@ import { usefetchuser } from '../../components/usefetchuser';
 import { ActivityIndicator } from 'react-native-paper';
 import { JDate ,JTime} from '../../components/JDate';
 import { useNetInfo } from '@react-native-community/netinfo';
-
+import {ComponentLoading} from "../../components/ComponentLoading"
 const Paneluser=()=>{
 
     //const cameraViewRef = React.useRef(null);
@@ -182,11 +182,11 @@ const Paneluser=()=>{
 
             <Header/>
 {/* <Text  style={{color:"#fff",fontSize:RFValue(28)}}>paneleuser</Text> */}
-            <Text style={{fontSize:RFValue(20),color:'red',alignSelf:'center'}}>{messages}</Text>
+            <Text style={{fontSize:RFValue(20),color:'#D570D9',alignSelf:'center'}}>{messages}</Text>
 
 
 
-            {isloading?<ActivityIndicator size={28} color="#fff"/>:(<>
+            {isloading?<ComponentLoading isFetching={isloading}/>:(<>
 <ScrollView>
 
 {
@@ -197,22 +197,26 @@ const Paneluser=()=>{
 
             <View style={Styles.pakegmahsa} key={i}>
 
-            <Text style={{color:'#000',fontSize:RFValue(13),marginVertical:'5%',alignSelf:'center'}}>{item.title}</Text>
+            <Text style={{color:'#000',fontSize:RFValue(16),marginVertical:'5%',alignSelf:'center',fontWeight:"bold"}}>{item.title}</Text>
 
             <View style={Styles.parentdatestaetend}>
 
-            <Text style={Styles.textdate} >{JDate(item.date)}</Text>
+            <Text style={[ {
+               // color:"#D570D9",
+                color:"#000",
+                },Styles.textdate]} >{JDate(item.date)}</Text>
 
 
-            <Text style={Styles.textdate}>تاریخ</Text>
+            <Text style={[ {color:"#000",},Styles.textdate]}>تاریخ</Text>
  </View>
             <View style={Styles.parentdatestaetend}>
-            <Text style={Styles.textdate}>{JTime(item.start_at)} </Text>
-            <Text style={Styles.textdate}>شروع  کلاس  </Text>
+            <Text style={[ {color:"#000",},Styles.textdate]}>{JTime(item.start_at)} </Text>
+    
+            <Text style={[ {color:"#000",},Styles.textdate]}>شروع  کلاس  </Text>
  </View>
             <View style={Styles.parentdatestaetend}>
-                <Text style={Styles.textdate}> {JTime(item.end_at)} </Text>
-                <Text style={Styles.textdate}>پایان کلاس  </Text>
+                <Text style={[ {color:"#000",},Styles.textdate]}> {JTime(item.end_at)} </Text>
+                <Text  style={[ {color:"#000",},Styles.textdate]}>پایان کلاس  </Text>
 
             </View>
 
@@ -242,7 +246,8 @@ const Styles=StyleSheet.create({
     container:{
         flex:1,
         
-        backgroundColor:'#5221BD'
+      //  backgroundColor:'#5221BD'
+        backgroundColor:'#fff'
     },
 
     parents:{
@@ -318,14 +323,28 @@ const Styles=StyleSheet.create({
     },
     pakegmahsa:{
       //  backgroundColor:'#5220BD',
-      backgroundColor:'#f5f5f5',
+   //   backgroundColor:'#f5f5f5',
+      backgroundColor:'#fff',
         borderRadius:10,
-        width:'95%',
+        width:'85%',
         alignSelf: 'center',
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
-        marginVertical:'3%'
+        marginVertical:'3%',
+
+          
+shadowColor: '#2196F3',
+
+shadowOffset: {
+	width: 0,
+	height: 3,
+},
+shadowOpacity: 0.27,
+shadowRadius: 4.65,
+
+elevation: 10,
+
     },
     txtpakegs:{
         color:'bleck',fontSize:RFValue(19),fontWeight:'bold',marginVertical:'5%',alignSelf:'center'
@@ -337,22 +356,24 @@ const Styles=StyleSheet.create({
         width:'95%',
     },
     textdate:{
-        color:'#000',fontSize:RFValue(12),marginVertical:'2%',alignSelf:'center'
+        fontSize:RFValue(14),marginVertical:'2%',alignSelf:'center',
+        //fontWeight:"bold"
     },
     submitpakege:{
-        width:'95%',
+        width:'90%',
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
         borderRadius:8,
       
-       backgroundColor:"#FFD119",
+       //backgroundColor:"#FFD119",
+       backgroundColor:"#B828B9",
        
       
         marginVertical:'2%'
     }
 ,texsubmitpakege:{
-        color:'black',fontSize:RFValue(14),marginVertical:'2%',alignSelf:'center'
+        color:'#fff',fontSize:RFValue(16),marginVertical:'2%',alignSelf:'center',fontWeight:"bold"
 
     },
     needs:{
